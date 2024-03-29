@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: LibraryPersistenceApplication
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+management:
+  info:
+    git:
+      enabled: true
+      mode: full
+  endpoints:
+    web:
+      exposure:
+        include: info, health, logfile
+
+logging:
+  file:
+    path: /var/log/repositories/
+    name: ${logging.file.path}library-persistence.log
